@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <area alias="uJet">
+    <key alias="mapsTitle">Map Search</key>
+    <key alias="mapsPlaceholder">Search for places or addresses</key>
+  </area>
+</language>

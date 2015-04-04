@@ -1,0 +1,19 @@
+﻿{
+    propertyEditors: [
+        {
+            alias: 'Logikfabrik.Umbraco.Jet.Maps',
+            name: 'Maps',
+            editor: {
+                view: '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/views/editor.html',
+                valueType: 'JSON'
+            }
+        }
+    ],
+    javascript: [
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/services/messaging.js',
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/controllers/editor.js'
+    ],
+    css: [
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/assets/editor.css'
+    ]
+}

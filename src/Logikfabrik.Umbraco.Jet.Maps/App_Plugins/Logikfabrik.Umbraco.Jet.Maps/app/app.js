@@ -1,0 +1,1 @@
+﻿var app = angular.module('Logikfabrik.Umbraco.Jet.Maps', []);

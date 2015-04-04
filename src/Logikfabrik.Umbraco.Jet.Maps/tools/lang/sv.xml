@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+  <area alias="uJet">
+    <key alias="mapsTitle">Kartsökning</key>
+    <key alias="mapsPlaceholder">Sök efter platser eller adresser</key>
+  </area>
+</language>
