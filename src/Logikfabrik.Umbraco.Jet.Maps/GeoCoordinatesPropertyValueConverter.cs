@@ -22,8 +22,8 @@
 
 using Logikfabrik.Umbraco.Jet.Web.Data.Converters;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
+using System.Globalization;
 
 namespace Logikfabrik.Umbraco.Jet.Maps
 {
@@ -31,7 +31,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
     {
         public bool CanConvertValue(string uiHint, Type from, Type to)
         {
-            return uiHint == GeoCoordinates.Editor && from == typeof(JObject) && to == typeof(GeoCoordinates);
+            return uiHint == GeoCoordinates.Editor || to == typeof(GeoCoordinates);
         }
 
         public object Convert(object value, Type to)
@@ -41,7 +41,20 @@ namespace Logikfabrik.Umbraco.Jet.Maps
 
             var json = JsonConvert.DeserializeObject<dynamic>(value.ToString());
 
-            throw new NotImplementedException();
+            if (json == null)
+                return null;
+
+            double lat;
+            double lng;
+
+            var culture = CultureInfo.InvariantCulture;
+
+            if (!double.TryParse((json.lat).ToString(), NumberStyles.Float, culture, out lat))
+                return null;
+
+            return !double.TryParse((json.lng).ToString(), NumberStyles.Float, culture, out lng)
+                ? null
+                : new GeoCoordinates { Lat = lat, Lng = lng };
         }
     }
 }

@@ -22,7 +22,6 @@
 
 using Logikfabrik.Umbraco.Jet.Mappings;
 using Logikfabrik.Umbraco.Jet.Web.Data.Converters;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Umbraco.Core;
 
@@ -33,7 +32,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         private static readonly object Lock = new object();
         private static bool _configured;
 
-        public override void OnApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+        public override void OnApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             if (!IsInstalled)
                 return;
@@ -47,14 +46,14 @@ namespace Logikfabrik.Umbraco.Jet.Maps
 
                 IEnumerable<IPropertyValueConverter> converters;
 
-                if (PropertyValueConverters.Converters.TryGetValue(typeof(JObject), out converters))
+                if (PropertyValueConverters.Converters.TryGetValue(typeof(GeoCoordinates), out converters))
                 {
-                    PropertyValueConverters.Converters.Remove(typeof(JObject));
-                    PropertyValueConverters.Converters.Add(typeof(JObject),
+                    PropertyValueConverters.Converters.Remove(typeof(GeoCoordinates));
+                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates),
                         new List<IPropertyValueConverter>(converters) { new GeoCoordinatesPropertyValueConverter() });
                 }
                 else
-                    PropertyValueConverters.Converters.Add(typeof(JObject),
+                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates),
                         new[] { new GeoCoordinatesPropertyValueConverter() });
 
                 _configured = true;
