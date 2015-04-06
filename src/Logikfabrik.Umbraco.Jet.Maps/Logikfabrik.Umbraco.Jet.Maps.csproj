@@ -71,8 +71,9 @@
     <Reference Include="log4net">
       <HintPath>..\packages\UmbracoCms.Core.7.0.4\lib\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Logikfabrik.Umbraco.Jet">
-      <HintPath>..\packages\uJet.3.0.0.0\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
+    <Reference Include="Logikfabrik.Umbraco.Jet, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\uJet.3.1.0.0\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
@@ -218,7 +219,9 @@
     <None Include="tools\lang\sv.xml" />
     <None Include="app.config" />
     <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\package.manifest" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="tools\install.ps1" />
     <None Include="tools\uninstall.ps1" />
     <None Include="uJet.nuspec" />
