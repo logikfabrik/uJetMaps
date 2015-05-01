@@ -79,7 +79,7 @@ Function Add-LangArea
 		
 	return $node
 }
-	
+
 Function Add-LangAreaKey
 {
 	<#
@@ -128,6 +128,18 @@ Function Remove-LangArea
 	#>
 
 	Param($xml, $area)
+
+	$node = $xml.SelectSingleNode("//area[@alias='$area']")
+
+	if (-Not ($node -ne $null)) {
+		return
+	}
+
+	if ($node.HasChildNodes) {
+		return
+	}
+
+	$node.ParentNode.RemoveChild($node)
 }
 
 Function Remove-LangAreaKey
@@ -146,4 +158,12 @@ Function Remove-LangAreaKey
 	#>
 
 	Param($xml, $area, $key)
+
+	$node = $xml.SelectSingleNode("//area[@alias='$area']//key[@alias='$key']")
+
+	if (-Not ($node -ne $null)) {
+		return
+	}
+
+	$node.ParentNode.RemoveChild($node)
 }

@@ -44,4 +44,30 @@ Function Remove-Lang
 	#>
 
 	Param($umbLangPath, $nugLangPath)
+
+	$nugLangFiles = Get-ChildItem "$nugLangPath\*.xml" -Name
+	
+	foreach ($nugLangFile in $nugLangFiles) {
+		if (-Not (Test-Path "$umbLangPath\$nugLangFile")) {
+			continue
+		}
+		
+		$umbLangXml = New-Object XML
+		$umbLangXml.Load("$umbLangPath\$nugLangFile")
+		
+		$nugLangXml = New-Object XML
+		$nugLangXml.Load("$nugLangPath\$nugLangFile")
+		
+		foreach ($area in Get-LangAreas $nugLangXml) {
+			$keys = Get-LangAreaKeys $nugLangXml $area
+			
+			foreach ($key in $keys.GetEnumerator()) {
+				Remove-LangAreaKey $umbLangXml $area $key.Key
+			}
+
+			Remove-LangArea $umbLangXml $area
+		}
+		
+		$umbLangXml.Save("$umbLangPath\$nugLangFile")
+	}
 }
