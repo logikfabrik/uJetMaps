@@ -223,6 +223,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="tools\install.ps1" />
+    <None Include="tools\ujetps-0.0.1\lang-xml.ps1" />
+    <None Include="tools\ujetps-0.0.1\lang-nuget.ps1" />
     <None Include="tools\uninstall.ps1" />
     <None Include="uJet.nuspec" />
   </ItemGroup>
