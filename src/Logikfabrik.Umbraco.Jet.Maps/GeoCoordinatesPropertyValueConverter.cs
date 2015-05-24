@@ -56,12 +56,12 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         /// <returns>A converted value.</returns>
         public object Convert(object value, Type to)
         {
-            if (value == null)
+            var obj = value as JObject;
+
+            if (obj == null)
             {
-                return new GeoCoordinates();
+                return null;
             }
-                
-            var obj = (JObject)value;
 
             double lat;
             double lng;
