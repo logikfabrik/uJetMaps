@@ -3,6 +3,11 @@ Umbraco Jet Maps (uJetMaps) is a geographical coordinates data type and property
 
 ![Screenshot](https://raw.githubusercontent.com/logikfabrik/uJetMaps/master/assets/screenshot.gif)
 
+### NuGet
+```
+PM> Install-Package uJetMaps
+```
+
 ## How To
 uJetMaps is easy to use. Add a reference to uJetMaps. Add a public property of type `GeoCoordinates` to one of your document or media types (using uJet). Fire up your application and a property editor for setting coordinates will now be available in the Umbraco back office.
 
