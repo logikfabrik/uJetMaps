@@ -1,10 +1,16 @@
-﻿Function Add-Lang
+﻿. "$PSScriptRoot\lang-xml.ps1"
+
+Function Add-Langs
 {
 	<#
 	.SYNOPSIS
+		Adds Umbraco lang keys.
 	.DESCRIPTION
+		Adds Umbraco lang keys.
 	.PARAMETER umbLangPath
+		The Umbraco lang directory path.
 	.PARAMETER nugLangPath
+		The NuGet lang directory path.
 	#>
 
 	Param($umbLangPath, $nugLangPath)
@@ -34,13 +40,17 @@
 	}
 }
 
-Function Remove-Lang
+Function Remove-Langs
 {
 	<#
 	.SYNOPSIS
+		Removes Umbraco lang keys.
 	.DESCRIPTION
+		Removes Umbraco lang keys.
 	.PARAMETER umbLangPath
+		The Umbraco lang directory path.
 	.PARAMETER nugLangPath
+		The NuGet lang directory path.
 	#>
 
 	Param($umbLangPath, $nugLangPath)
