@@ -226,7 +226,7 @@
     <None Include="tools\ujetps-0.0.1\lang-xml.ps1" />
     <None Include="tools\ujetps-0.0.1\lang-nuget.ps1" />
     <None Include="tools\uninstall.ps1" />
-    <None Include="uJet.nuspec" />
+    <None Include="uJetMaps.nuspec" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
