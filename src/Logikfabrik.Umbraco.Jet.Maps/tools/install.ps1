@@ -1,6 +1,6 @@
 ﻿param($installPath, $toolsPath, $package, $project)
 
-. "$PSScriptRoot\ujetps-0.0.1\lang-nuget.ps1"
+. "$PSScriptRoot\ups\lang-nuget.ps1"
 
 $projectPath = (Get-Item $project.FullName).Directory.FullName
 $umbLangPath = "$projectPath\Umbraco\Config\Lang"
