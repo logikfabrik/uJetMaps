@@ -1,23 +1,17 @@
-﻿app.controller('ujet.map', ['$scope', '$window', 'ujet.leaflet', 'ujet.messaging',
+﻿app.controller('ujet.map', [
+    '$scope', '$window', 'ujet.leaflet', 'ujet.messaging',
 // ReSharper disable once InconsistentNaming
-    function ($scope, $window, L, messaging) {
+    function($scope, $window, L, messaging) {
         var map;
         var layer;
         var model = {};
-
-        messaging.getMessages($window, function (data) {
-            model = data;
-
-            drawMap();
-            drawMapMarker(model.value, true);
-        });
 
         function isLatlng(latlng) {
             if (latlng == null)
                 return false;
 
             return latlng.hasOwnProperty('lat') && latlng.hasOwnProperty('lng');
-        }
+        };
 
         function drawMapMarker(latlng, moveTo) {
             model.value = latlng;
@@ -30,7 +24,7 @@
 
             var ll = L.latLng(latlng.lat, latlng.lng);
 
-            layer.addLayer(L.marker(ll).on('click', function () {
+            layer.addLayer(L.marker(ll).on('click', function() {
                 drawMapMarker(null, false);
             }));
 
@@ -39,7 +33,7 @@
         };
 
         function drawMap() {
-            map = L.map('map').on('click', function (e) {
+            map = L.map('map').on('click', function(e) {
                 drawMapMarker(e.latlng, false);
             });
 
@@ -56,11 +50,19 @@
                 allowMultipleResults: false,
                 placeholder: model.config.localization.placeholder,
                 title: model.config.localization.title
-            }).addTo(map).on('results', function (data) {
+            }).addTo(map).on('results', function(data) {
                 if (data.results.length === 0)
                     return;
 
                 drawMapMarker(data.results[0].latlng, true);
             });
-        }
-    }]);
+        };
+
+        messaging.getMessages($window, function(data) {
+            model = data;
+
+            drawMap();
+            drawMapMarker(model.value, true);
+        });
+    }
+]);
