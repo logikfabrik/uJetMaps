@@ -1,5 +1,6 @@
 version: 0.0.1.{build}
-os: Windows Server 2012
+skip_tags: true
+os: Visual Studio 2015
 platform: Any CPU
 configuration: Release
 before_build:
@@ -7,4 +8,4 @@ before_build:
 build:
   project: src/Logikfabrik.Umbraco.Jet.Maps.sln
   publish_nuget: true
-  verbosity: normal
+  verbosity: minimal
