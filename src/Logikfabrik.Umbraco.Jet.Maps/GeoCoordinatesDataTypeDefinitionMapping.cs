@@ -11,7 +11,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
     using Mappings;
 
     /// <summary>
-    /// Data type definition mapping for geographical coordinates.
+    /// The <see cref="GeoCoordinatesDataTypeDefinitionMapping" /> class. Mapping for the <see cref="GeoCoordinates" /> class.
     /// </summary>
     public class GeoCoordinatesDataTypeDefinitionMapping : DataTypeDefinitionMapping
     {

@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
     using Web.Data.Converters;
 
     /// <summary>
-    /// Property value converter for geographical coordinates.
+    /// The <see cref="GeoCoordinatesPropertyValueConverter" /> class. Property value converter for the <see cref="GeoCoordinates" /> class.
     /// </summary>
     public class GeoCoordinatesPropertyValueConverter : IPropertyValueConverter
     {
@@ -20,7 +20,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         /// <param name="uiHint">A UI hint.</param>
         /// <param name="from">Type to convert from.</param>
         /// <param name="to">Type to convert to.</param>
-        /// <returns>True if the converter can convert a value; otherwise false.</returns>
+        /// <returns><c>true</c> if the converter can convert a value; otherwise, <c>false</c>.</returns>
         public bool CanConvertValue(string uiHint, Type from, Type to)
         {
             return uiHint == GeoCoordinates.Editor || to == typeof(GeoCoordinates);

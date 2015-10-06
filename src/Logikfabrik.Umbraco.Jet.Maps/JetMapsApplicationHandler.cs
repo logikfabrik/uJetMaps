@@ -10,7 +10,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
     using Web.Data.Converters;
 
     /// <summary>
-    /// Application handler responsible for setting up the geographical coordinates data type.
+    /// The <see cref="JetMapsApplicationHandler" /> class. Application handler responsible for setting up the geographical coordinates data type.
     /// </summary>
     public class JetMapsApplicationHandler : JetApplicationHandler
     {
