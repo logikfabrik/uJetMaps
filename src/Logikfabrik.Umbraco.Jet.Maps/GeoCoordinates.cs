@@ -1,5 +1,5 @@
 ﻿// <copyright file="GeoCoordinates.cs" company="Logikfabrik">
-//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2016 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Maps
@@ -17,21 +17,14 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         /// </summary>
         internal const string Editor = "Logikfabrik.Umbraco.Jet.Maps";
 
-        /// <summary>
-        /// Latitude coordinate.
-        /// </summary>
         private double _lat;
-
-        /// <summary>
-        /// Longitude coordinate.
-        /// </summary>
         private double _lng;
 
         /// <summary>
         /// Gets or sets the latitude in degrees.
         /// </summary>
         /// <value>
-        /// The the latitude in degrees.
+        /// The latitude in degrees.
         /// </value>
         /// <exception cref="ArgumentOutOfRangeException">Trown if <paramref name="value" /> is out of range.</exception>
         public double Lat
@@ -56,7 +49,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         /// Gets or sets the longitude in degrees.
         /// </summary>
         /// <value>
-        /// The the longitude in degrees.
+        /// The longitude in degrees.
         /// </value>
         /// <exception cref="ArgumentOutOfRangeException">Trown if <paramref name="value" /> is out of range.</exception>
         public double Lng

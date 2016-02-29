@@ -1,0 +1,9 @@
+﻿.ujet-map {
+    height: 300px;
+    width: 70%;
+}
+
+.ujet-map__frame {
+    height: 300px;
+    width: 100%;
+}

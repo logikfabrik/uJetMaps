@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<language>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en_us" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
   <area alias="uJet">
     <key alias="mapsTitle">Map Search</key>
     <key alias="mapsPlaceholder">Search for places or addresses</key>

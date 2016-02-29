@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>uJetMaps</id>
-    <version>$version$</version>
+    <version>$version$-beta</version>
     <title>Umbraco Jet Maps</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
@@ -11,13 +11,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Umbraco Jet Maps (uJetMaps) is a geographical coordinates data type and property editor for Umbraco 7, built using uJet.</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright (c) 2015</copyright>
+    <copyright>Copyright (c) 2016</copyright>
     <tags>Umbraco, Jet, MVC, Code First, uJet</tags>
     <dependencies>
-      <dependency id="uJet" version="[3.1,4.0]" />
+      <dependency id="uJet" version="4.0.0-beta" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**\*.*" target="tools\" />
-  </files>
 </package>

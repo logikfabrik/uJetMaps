@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<language>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="sv" intName="Swedish" localName="Svenska" lcid="29" culture="sv-SE">
   <area alias="uJet">
     <key alias="mapsTitle">Kartsökning</key>
     <key alias="mapsPlaceholder">Sök efter platser eller adresser</key>

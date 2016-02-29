@@ -1,5 +1,5 @@
 ﻿// <copyright file="JetMapsApplicationHandler.cs" company="Logikfabrik">
-//   Copyright (c) 2015 anton(at)logikfabrik.se. Licensed under the MIT license.
+//   Copyright (c) 2016 anton(at)logikfabrik.se. Licensed under the MIT license.
 // </copyright>
 
 namespace Logikfabrik.Umbraco.Jet.Maps
@@ -14,9 +14,6 @@ namespace Logikfabrik.Umbraco.Jet.Maps
     /// </summary>
     public class JetMapsApplicationHandler : JetApplicationHandler
     {
-        /// <summary>
-        /// Sync lock.
-        /// </summary>
         private static readonly object Lock = new object();
 
         /// <summary>
@@ -50,15 +47,11 @@ namespace Logikfabrik.Umbraco.Jet.Maps
                 if (PropertyValueConverters.Converters.TryGetValue(typeof(GeoCoordinates), out converters))
                 {
                     PropertyValueConverters.Converters.Remove(typeof(GeoCoordinates));
-                    PropertyValueConverters.Converters.Add(
-                        typeof(GeoCoordinates),
-                        new List<IPropertyValueConverter>(converters) { new GeoCoordinatesPropertyValueConverter() });
+                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates), new List<IPropertyValueConverter>(converters) { new GeoCoordinatesPropertyValueConverter() });
                 }
                 else
                 {
-                    PropertyValueConverters.Converters.Add(
-                        typeof(GeoCoordinates),
-                        new[] { new GeoCoordinatesPropertyValueConverter() });
+                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates), new[] { new GeoCoordinatesPropertyValueConverter() });
                 }
 
                 configured = true;

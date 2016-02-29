@@ -1,46 +1,53 @@
-﻿app.controller('ujet.map', [
-    '$scope', '$window', 'ujet.leaflet', 'ujet.messaging',
-// ReSharper disable once InconsistentNaming
-    function($scope, $window, L, messaging) {
+﻿(function () {
+    "use strict";
+
+    app.controller("ujetMapController", ujetMapController);
+
+    ujetMapController.$inject = ["$scope", "$window", "ujetLeafletFactory", "ujetMessagingService"];
+
+    function ujetMapController($scope, $window, L, ujetMessagingService) {
         var map;
         var layer;
         var model = {};
 
         function isLatlng(latlng) {
-            if (latlng == null)
+            if (latlng == null) {
                 return false;
+            }
 
-            return latlng.hasOwnProperty('lat') && latlng.hasOwnProperty('lng');
+            return latlng.hasOwnProperty("lat") && latlng.hasOwnProperty("lng");
         };
 
         function drawMapMarker(latlng, moveTo) {
             model.value = latlng;
-            messaging.sendMessage($window.parent, model);
+            ujetMessagingService.sendMessage($window.parent, model);
 
             layer.clearLayers();
 
-            if (!isLatlng(latlng))
+            if (!isLatlng(latlng)) {
                 return;
+            }
 
             var ll = L.latLng(latlng.lat, latlng.lng);
 
-            layer.addLayer(L.marker(ll).on('click', function() {
+            layer.addLayer(L.marker(ll).on("click", function () {
                 drawMapMarker(null, false);
             }));
 
-            if (moveTo)
+            if (moveTo) {
                 map.setView(ll, 12);
+            }
         };
 
         function drawMap() {
-            map = L.map('map').on('click', function(e) {
+            map = L.map("map").on("click", function (e) {
                 drawMapMarker(e.latlng, false);
             });
 
             map.setMaxBounds(L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180)));
             map.setView([0, 0], 1);
 
-            L.esri.basemapLayer('Topographic').addTo(map);
+            L.esri.basemapLayer("Topographic").addTo(map);
 
             layer = new L.LayerGroup().addTo(map);
 
@@ -50,7 +57,7 @@
                 allowMultipleResults: false,
                 placeholder: model.config.localization.placeholder,
                 title: model.config.localization.title
-            }).addTo(map).on('results', function(data) {
+            }).addTo(map).on("results", function (data) {
                 if (data.results.length === 0)
                     return;
 
@@ -58,11 +65,11 @@
             });
         };
 
-        messaging.getMessages($window, function(data) {
+        ujetMessagingService.onMessage($window, function (data) {
             model = data;
 
             drawMap();
             drawMapMarker(model.value, true);
         });
-    }
-]);
+    };
+})();

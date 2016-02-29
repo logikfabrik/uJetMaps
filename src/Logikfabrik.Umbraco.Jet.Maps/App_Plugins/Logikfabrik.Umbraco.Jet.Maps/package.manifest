@@ -4,16 +4,16 @@
             alias: 'Logikfabrik.Umbraco.Jet.Maps',
             name: 'Maps',
             editor: {
-                view: '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/views/editor.html',
+                view: '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/js/app/components/editor/editor.html',
                 valueType: 'JSON'
             }
         }
     ],
     javascript: [
-        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/services/messaging.js',
-        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/controllers/editor.js'
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/js/app/services/messagingService.js',
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/js/app/components/editor/editorController.js'
     ],
     css: [
-        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/app/assets/editor.css'
+        '~/App_Plugins/Logikfabrik.Umbraco.Jet.Maps/css/app/components/editor.css'
     ]
 }
