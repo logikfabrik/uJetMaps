@@ -25,19 +25,36 @@
         }
 
         /**
+         * Adds an event listener for the load event and wires it to call the callback 
+         * function when the load event is raised.
          * 
-         * @param {} win The window.
+         * @param {} win The window to add the event listener to.
          * @param {} callback The function to call when the load event is raised.
-         * @returns {} 
+         * @returns {undefined} 
          */
         function onLoad(win, callback) {
             addEventListener(win, "load", function() { callback(); });
         }
 
+        /**
+         * Sends a message.
+         * 
+         * @param {} win The window to send the message through.
+         * @param {} message The message to send.
+         * @returns {undefined} 
+         */
         function sendMessage(win, message) {
             win.postMessage(message, $window.location.origin);
         }
 
+        /**
+         * Adds an event listener for the message event and wires it to call the callback 
+         * function when a message event is raised.
+         * 
+         * @param {} win The window to add the event listener to.
+         * @param {} callback The function to call when the message event is raised.
+         * @returns {undefined} 
+         */
         function onMessage(win, callback) {
             addEventListener(win, "message", function(e) {
                 if (e.origin !== $window.location.origin) {

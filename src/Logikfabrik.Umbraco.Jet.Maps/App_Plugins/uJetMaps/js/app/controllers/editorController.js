@@ -3,7 +3,7 @@
 
     app.controller("ujetEditorController", ujetEditorController);
 
-    ujetEditorController.$inject = ["$scope", "$element", "$window", "$q", 'localizationService', 'ujetMessagingService'];
+    ujetEditorController.$inject = ["$scope", "$element", "$window", "$q", "localizationService", "ujetMessagingService"];
 
     function ujetEditorController($scope, $element, $window, $q, localizationService, ujetMessagingService) {
         $scope.model.config.localization = {
@@ -12,10 +12,12 @@
         };
 
         $q.all([
-                localizationService.localize('uJet_mapsTitle').then(function(value) {
+                localizationService.localize("uJet_mapsTitle")
+                .then(function(value) {
                     $scope.model.config.localization.title = value;
                 }),
-                localizationService.localize('uJet_mapsPlaceholder').then(function(value) {
+                localizationService.localize("uJet_mapsPlaceholder")
+                .then(function(value) {
                     $scope.model.config.localization.placeholder = value;
                 })
             ])
