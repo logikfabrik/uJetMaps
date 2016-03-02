@@ -15,7 +15,7 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         /// <summary>
         /// Editor alias for the geographical coordinates data type.
         /// </summary>
-        internal const string Editor = "Logikfabrik.Umbraco.Jet.Maps";
+        internal const string Editor = "uJetMaps";
 
         private double _lat;
         private double _lng;

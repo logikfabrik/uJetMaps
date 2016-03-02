@@ -4,7 +4,6 @@
     app.service("ujetMessagingService", ujetMessagingService);
 
     ujetMessagingService.$inject = ["$window"];
-
     
     function ujetMessagingService($window) {
         var service = {

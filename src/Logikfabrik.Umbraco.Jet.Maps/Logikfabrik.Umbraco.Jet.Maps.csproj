@@ -283,6 +283,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EditorController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="GeoCoordinatesDataTypeDefinitionMapping.cs" />
     <Compile Include="GeoCoordinatesPropertyValueConverter.cs" />
     <Compile Include="GeoCoordinates.cs" />
@@ -290,24 +292,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\app.js" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\css\app\components\editor.css" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\css\app\components\map.css" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\components\map\mapController.js" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\factories\leafletFactory.js" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\components\editor\editor.html" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\components\editor\editorController.js" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\components\map\map.html" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\js\app\services\messagingService.js" />
+    <Content Include="App_Plugins\uJetMaps\js\app\app.js" />
+    <Content Include="App_Plugins\uJetMaps\css\app\editor.css" />
+    <Content Include="App_Plugins\uJetMaps\css\app\map.css" />
+    <Content Include="App_Plugins\uJetMaps\js\app\controllers\mapController.js" />
+    <Content Include="App_Plugins\uJetMaps\js\app\factories\leafletFactory.js" />
+    <Content Include="App_Plugins\uJetMaps\js\app\controllers\editorController.js" />
+    <Content Include="App_Plugins\uJetMaps\js\app\services\messagingService.js" />
+    <Content Include="App_Plugins\uJetMaps\views\editor\index.cshtml" />
+    <Content Include="App_Plugins\uJetMaps\views\map\index.cshtml" />
+    <Content Include="App_Plugins\uJetMaps\views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
     <AdditionalFiles Include="stylecop.json" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\lang\en-GB.xml" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\lang\en-US.xml" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\lang\sv-SE.xml" />
+    <Content Include="App_Plugins\uJetMaps\lang\en-GB.xml" />
+    <Content Include="App_Plugins\uJetMaps\lang\en-US.xml" />
+    <Content Include="App_Plugins\uJetMaps\lang\sv-SE.xml" />
     <None Include="app.config" />
-    <Content Include="App_Plugins\Logikfabrik.Umbraco.Jet.Maps\package.manifest" />
+    <Content Include="App_Plugins\uJetMaps\package.manifest" />
     <None Include="uJetMaps.nuspec" />
   </ItemGroup>
   <ItemGroup>

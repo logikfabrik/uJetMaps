@@ -1,0 +1,19 @@
+﻿{
+    propertyEditors: [
+        {
+            alias: 'uJetMaps',
+            name: 'Maps',
+            editor: {
+                view: '/umbraco/uJetMaps/Editor/Index',
+                valueType: 'JSON'
+            }
+        }
+    ],
+    javascript: [
+        '~/App_Plugins/uJetMaps/js/app/services/messagingService.js',
+        '~/App_Plugins/uJetMaps/js/app/controllers/editorController.js'
+    ],
+    css: [
+        '~/App_Plugins/uJetMaps/css/app/editor.css'
+    ]
+}
