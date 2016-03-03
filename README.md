@@ -27,8 +27,7 @@ namespace Example.Models
     {
 		[Display(
             Name = "Map", 
-            Description = "The map coordinates",
-            Order = 500)]
+            Description = "The map coordinates")]
         public GeoCoordinates MapCoordinates { get; set; }
     }
 }
@@ -66,6 +65,7 @@ namespace Example.Controllers
         }
     }
 }
+```
 
 ## Contributions
 uJetMaps is Open Source (MIT), and you’re welcome to contribute!
