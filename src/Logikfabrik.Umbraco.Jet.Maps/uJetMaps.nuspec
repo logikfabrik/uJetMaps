@@ -2,19 +2,20 @@
 <package>
   <metadata>
     <id>uJetMaps</id>
-    <version>$version$-beta</version>
+    <version>$version$</version>
     <title>Umbraco Jet Maps</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/logikfabrik/uJetMaps/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/logikfabrik/uJetMaps</projectUrl>
+    <iconUrl>http://img.logikfabrik.se/lf-64x64.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Umbraco Jet Maps (uJetMaps) is a geographical coordinates data type and property editor for Umbraco 7, built using uJet.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright (c) 2016</copyright>
     <tags>Umbraco, Jet, MVC, Code First, uJet</tags>
     <dependencies>
-      <dependency id="uJet" version="4.0.0-beta" />
+      <dependency id="uJet" version="4.0.0" />
     </dependencies>
   </metadata>
 </package>

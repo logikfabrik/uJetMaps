@@ -100,7 +100,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Logikfabrik.Umbraco.Jet, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\uJet.4.0.0.0-beta\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
+      <HintPath>..\packages\uJet.4.0.0.0\lib\net45\Logikfabrik.Umbraco.Jet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">

@@ -4,7 +4,6 @@
 
 namespace Logikfabrik.Umbraco.Jet.Maps
 {
-    using System.Collections.Generic;
     using global::Umbraco.Core;
     using Mappings;
     using Web.Data.Converters;
@@ -40,19 +39,8 @@ namespace Logikfabrik.Umbraco.Jet.Maps
 
             lock (Lock)
             {
-                DataTypeDefinitionMappings.Mappings.Add(typeof(GeoCoordinates), new GeoCoordinatesDataTypeDefinitionMapping());
-
-                IEnumerable<IPropertyValueConverter> converters;
-
-                if (PropertyValueConverters.Converters.TryGetValue(typeof(GeoCoordinates), out converters))
-                {
-                    PropertyValueConverters.Converters.Remove(typeof(GeoCoordinates));
-                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates), new List<IPropertyValueConverter>(converters) { new GeoCoordinatesPropertyValueConverter() });
-                }
-                else
-                {
-                    PropertyValueConverters.Converters.Add(typeof(GeoCoordinates), new[] { new GeoCoordinatesPropertyValueConverter() });
-                }
+                DataTypeDefinitionMappingRegistrar.Register<GeoCoordinates>(new GeoCoordinatesDataTypeDefinitionMapping());
+                PropertyValueConverterRegistrar.Register<GeoCoordinates>(new GeoCoordinatesPropertyValueConverter());
 
                 configured = true;
             }

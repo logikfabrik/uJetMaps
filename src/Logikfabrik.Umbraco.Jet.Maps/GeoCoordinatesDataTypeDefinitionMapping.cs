@@ -29,22 +29,16 @@ namespace Logikfabrik.Umbraco.Jet.Maps
         {
             return !CanMapToDefinition(fromType)
                 ? null
-                : GetDefinition(GeoCoordinates.Editor);
+                : GetDefinition();
         }
 
         /// <summary>
-        /// Gets a data type definition.
+        /// Gets the data type definition.
         /// </summary>
-        /// <param name="editor">The editor alias to use for getting a data type definition.</param>
-        /// <returns>A data type definition.</returns>
-        private static IDataTypeDefinition GetDefinition(string editor)
+        /// <returns>The data type definition.</returns>
+        private static IDataTypeDefinition GetDefinition()
         {
-            if (string.IsNullOrWhiteSpace(editor))
-            {
-                throw new ArgumentException("Editor cannot be null or white space.", nameof(editor));
-            }
-
-            return ApplicationContext.Current.Services.DataTypeService.GetDataTypeDefinitionByPropertyEditorAlias(editor).Single();
+            return ApplicationContext.Current.Services.DataTypeService.GetDataTypeDefinitionByPropertyEditorAlias(GeoCoordinates.Editor).Single();
         }
     }
 }

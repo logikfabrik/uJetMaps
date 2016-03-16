@@ -54,6 +54,11 @@
             }
         };
 
+        /**
+         * Draws the map.
+         * 
+         * @returns {undefined} 
+         */
         function drawMap() {
             map = L.map("map")
                 .on("click", function (e) {
