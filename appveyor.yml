@@ -1,6 +1,14 @@
-version: 0.0.4.{build}
+version: 0.0.5.{build}
+branches:
+  only:
+    - master
 skip_tags: true
-os: Visual Studio 2015
+image: Visual Studio 2015
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
 platform: Any CPU
 configuration: Release
 before_build:
@@ -8,4 +16,7 @@ before_build:
 build:
   project: src/Logikfabrik.Umbraco.Jet.Maps.sln
   publish_nuget: true
+  publish_nuget_symbols: true
   verbosity: minimal
+nuget:
+  disable_publish_on_pr: true
