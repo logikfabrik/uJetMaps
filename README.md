@@ -15,9 +15,9 @@ uJetMaps is easy to use. Add a reference to uJetMaps. Add a public property of t
 ```csharp
 namespace Example.Models
 {
-	using System.ComponentModel.DataAnnotations;
-	using Logikfabrik.Umbraco.Jet;
-	using Logikfabrik.Umbraco.Jet.Maps;
+    using System.ComponentModel.DataAnnotations;
+    using Logikfabrik.Umbraco.Jet;
+    using Logikfabrik.Umbraco.Jet.Maps;
 
     [DocumentType(
         "Map page",
@@ -25,7 +25,7 @@ namespace Example.Models
         AllowedAsRoot = true)]
     public class MapPage
     {
-		[Display(
+        [Display(
             Name = "Map", 
             Description = "The map coordinates")]
         public GeoCoordinates MapCoordinates { get; set; }
@@ -44,7 +44,7 @@ namespace Example.Models
 </head>
 <body>
     <p>lat: @Model.MapCoordinates.Lat</p>
-	<p>lng: @Model.MapCoordinates.Lng</p>
+    <p>lng: @Model.MapCoordinates.Lng</p>
 </body>
 </html>
 ```
@@ -53,9 +53,9 @@ namespace Example.Models
 ```csharp
 namespace Example.Controllers
 {
-	using System.Web.Mvc;
-	using Logikfabrik.Umbraco.Jet.Web.Mvc;
-	using Models;
+    using System.Web.Mvc;
+    using Logikfabrik.Umbraco.Jet.Web.Mvc;
+    using Models;
 
     public class MapPageController : JetController
     {
