@@ -1,1 +1,1 @@
-nuget pack Logikfabrik.Umbraco.Jet.Maps\Logikfabrik.Umbraco.Jet.Maps.csproj -Build -MSBuildVersion 14 -Prop Configuration=Release
+nuget pack Logikfabrik.Umbraco.Jet.Maps\Logikfabrik.Umbraco.Jet.Maps.csproj -Build -Prop Configuration=Release
